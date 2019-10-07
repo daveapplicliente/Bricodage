@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azure-test-docker-hello
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: azure-test-docker-hello
+  template:
+    metadata:
+      labels:
+        app: azure-test-docker-hello
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+      - name: azure-test-docker-hello
+        image: acraugustincontainerregistry.azurecr.io/test-docker-hello:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 250m
+            memory: 256Mi
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: azure-test-docker-hello
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: azure-test-docker-hello

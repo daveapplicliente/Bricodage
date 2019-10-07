@@ -1,0 +1,13 @@
+{
+  "name": "test-hello-api",
+  "version": "0.0.1",
+  "description": "Node.js on Docker",
+  "author": "Augustin de Miscault <daveapplicliente@gmail.com>",
+  "main": "test-hello-api.js",
+  "scripts": {
+    "start": "node test-hello-api.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1"
+  }
+}
