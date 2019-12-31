@@ -10,7 +10,7 @@ ADD . /app/
 WORKDIR /app
 RUN npm install
 
-EXPOSE 8080
+EXPOSE 80
 VOLUME /app/logs
 
 CMD npm run start
