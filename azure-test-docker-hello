@@ -16,7 +16,7 @@ spec:
         "beta.kubernetes.io/os": linux
       containers:
       - name: azure-test-docker-hello
-        image: acraugustincontainerregistry.azurecr.io/test-docker-hello:latest
+        image: acraugustincontainerregistry.azurecr.io/azure-test-docker-hello:latest
         resources:
           requests:
             cpu: 100m
