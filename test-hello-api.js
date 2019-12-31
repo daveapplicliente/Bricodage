@@ -7,4 +7,4 @@ app.get('/:param1', function(req, res) {
     res.send('Hello ' + req.params.param1 + '!! Have fun!!');
 });
 
-app.listen(8080);
+app.listen(80);
